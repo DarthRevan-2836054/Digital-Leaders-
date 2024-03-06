@@ -8,7 +8,7 @@ A website for the digital Leaders club which parents can access to view what DL 
 
 ## Created By
 
-- [@DarthRevan](https://www.github.com/DarthRevan-2836054)
+- [@DarthRevan](https://www.github.com/DarthRevan-2836054) (Thomas M) 
 
 
-- [@Alfie5640](https://www.github.com/Alfie5640)
+- [@Alfie5640](https://www.github.com/Alfie5640) (Alfie W)
