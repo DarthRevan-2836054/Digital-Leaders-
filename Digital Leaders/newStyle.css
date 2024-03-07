@@ -1,12 +1,38 @@
-* {
+.list {
+    display: block;
+    float: right;
+    padding: 15px;
+    margin: 10px;
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: all 0.15s;
+    background-color: black;
     color: white;
-    overflow-x: hidden;
+}
+
+.list:hover {
+    border: 2px solid #ff6961;
+}
+
+.navbarA {
+    padding-bottom: 5px;
+    border-bottom: 2px solid white;
+}
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 h1 {
     position: absolute;
     left: 50px;
     font-family:serif;
+    color: white;
 }
 
 p {
@@ -22,26 +48,6 @@ body {
     background-color: black;
 }
 
-li {
-    display: block;
-    float: right;
-    padding: 15px;
-    margin: 10px;
-    border: 2px solid white;
-    border-radius: 5px;
-    transition: all 0.15s;
-    background-color: black;
-}
-
-li:hover {
-    border: 2px solid #ff6961;
-}
-
-li a {
-    padding-bottom: 5px;
-    border-bottom: 2px solid white;
-}
-
 #nav {
     background-color:  #121212;
     border: 1px solid #121212;
@@ -50,6 +56,8 @@ li a {
     justify-content: right;
     align-items: center;
     width: 100%;
+    position: fixed;
+    top: 0;
 }
 
 .maincontent {
@@ -67,20 +75,19 @@ li a {
 }
 
 hr {
-    animation: hrcolor 5s infinite;
+    animation: hrcolor 4s infinite;
     border-width: 3px;
+    width: 100%;
+    position: fixed;
+    top: 126px;
 }
 
 @keyframes hrcolor {
-  0%   {border-color: #ff6961;}
-  25% {border-color: lightgreen;}
-  50% {border-color: lightblue;}
+  0%   {border-color: lightgreen}
+  25% {border-color: lightblue;}
+  50% {border-color: #ff6961;}
   75% {border-color: mediumpurple;}
-  100% {border-color: #ff6961;}
-}
-
-a {
-    list-style-type: none;
+  100% {border-color: lightgreen}
 }
 
 .mainInfo {
@@ -157,7 +164,7 @@ a {
     transition: all 0.6s;
 }
 
-.leftImg:hover, .rightImg:hover, .leftText:hover, .rightText:hover, .project:hover {
+.leftImg:hover, .rightImg:hover, .leftText:hover, .rightText:hover {
     transform: scale(1.05);
     box-shadow: 0px 0px 8px lightblue;
 }
@@ -165,13 +172,14 @@ a {
 footer {
     background-color: #121212;
     width: 100%;
+    bottom: 0px;
+    position: fixed;
+    color: white;
     height: 15%;
     display: flex;
     align-items: center;
     justify-content: center;
     border-top: 1px solid white;
-    position: fixed;
-    bottom: 0;
 }
 
 .images {
@@ -190,9 +198,91 @@ footer {
     float: left;
     margin: 0.3% 0.3% 0.3% 0.3%;
 }
-#pepeFrog {
 
-    display: block;
-    
+.fakeBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    min-height: 100vh;
 }
+
+.menu {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu li {
+    position: absolute;
+    left:-50px;
+    list-style: none;
+    transform-origin: 150px;
+    transition: 0.5s;
+    transition-delay: calc(0.1s * var(--i));
+    transform: rotate(0deg) translateX(120px);
+}
+
+.menu.active li {
+    transform: rotate(calc(360deg / 4 * var(--i)));
+}
+
+.menu.active li a {
+    animation: boxshad 4s infinite;
+}
+
+.menu li a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background: #121212;
+    border-radius: 50%;
+    transform: rotate(calc(360deg / -4 * var(--i)));
+    color: white;
+    box-shadow: 0px 0px 0px 0px;
+}
+
+@keyframes rect {
+    0% {}
+    25% {border-radius: 30%; width: 80px;}
+    50% {border-radius: 20%; width: 90px;}
+    75% {border-radius: 10%; width: 95px;}
+    100% {border-radius: 5%; width: 100px;}
+    
+    }
+
+@keyframes boxshad {
+  0%   {box-shadow: 0px 0px 4px 2px lightgreen;}
+  25% {box-shadow: 0px 0px 4px 2px lightblue;}
+  50% {box-shadow: 0px 0px 4px 2px #ff6961;}
+  75% {box-shadow: 0px 0px 4px 2px mediumpurple;}
+  100% {box-shadow: 0px 0px  4px 2px lightgreen;}
+}
+
+.toggle {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 4px rgba(0,0,0,0.15);
+    font-size: 2em;
+    color: white;
+    transition: transform 1.25s;
+}
+
+.menu.active .toggle {
+    transform: rotate(315deg);
+}
+
 
