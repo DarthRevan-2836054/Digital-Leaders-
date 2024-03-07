@@ -12,3 +12,5 @@ A website for the digital Leaders club which parents can access to view what DL 
 
 
 - [@Alfie5640](https://www.github.com/Alfie5640) (Alfie W)
+
+- [@smiler5081](https://github.com/smiler5081) (Vatiliai N) 
